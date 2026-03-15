@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focal Studios | Premium Media Production</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark-bg: #050505;
+            --card-bg: #111111;
+            --glass: rgba(0, 0, 0, 0.8);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            scroll-behavior: smooth;
+            padding-top: 70px; /* Space for the fixed nav */
+        }
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 1.4rem;
+            text-decoration: none;
+            letter-spacing: 3px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li { position: relative; padding: 0 15px; }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        /* Dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(10, 10, 10, 0.95);
+            min-width: 180px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 10px 0;
+        }
+
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { padding: 10px 20px; display: block; text-transform: capitalize; }
+
+        /* --- HERO SECTION --- */
+        header {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        header h1 { font-size: 3.5rem; color: var(--gold); letter-spacing: 5px; margin: 0; }
+
+        /* --- PORTFOLIO GALLERY --- */
+        .section-title { color: var(--gold); text-align: center; letter-spacing: 3px; margin: 50px 0 30px; text-transform: uppercase; }
+
+        .work-card {
+    /* This creates the gold border seen in your photo */
+    border: 2px solid #D4AF37; 
+    border-radius: 15px;      /* Adjust this for the roundness */
+    overflow: hidden;         /* This clips the image to the rounded corners */
+    width: 200%;              /* Adjust based on your layout */
+    max-width: 600px;         /* Example size */
+    height: 200px;            /* Example size */
+    display: flex;
+    margin-top: 10px;
+    }
+
+      .work-card img {
+    width: 100%;
+    height: 100%;
+    /* This ensures your new photo doesn't look stretched */
+    object-fit: cover; 
+    object-position: center;
+
+    }
+        /* --- MEET THE TEAM --- */
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 20px 80px;
+            background: #080808;
+        }
+
+        .team-card { text-align: center; max-width: 200px; }
+        .team-img {
+            width: 140px; height: 140px; background: #222; border-radius: 50%;
+            margin: 0 auto 15px; border: 2px solid var(--gold);
+        }
+
+        /* --- CONTACT FORM --- */
+        .contact-section { max-width: 600px; margin: 0 auto 100px; padding: 0 20px; }
+        input, select, textarea {
+            width: 100%; padding: 12px; margin-bottom: 15px; background: #1a1a1a;
+            border: 1px solid #333; color: white; border-radius: 5px; box-sizing: border-box;
+        }
+        .submit-btn {
+            width: 100%; padding: 15px; background: var(--gold); color: black;
+            font-weight: bold; border: none; border-radius: 5px; cursor: pointer;
+        }
+        .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.whatsapp-float img {
+    width: 35px;
+    margin-top: 12px;
+}
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">FOCAL STUDIOS</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li class="dropdown">
+                    <a href="#">Services ▾</a>
+                    <div class="dropdown-content">
+                        <a href="photography.html">Photography</a>
+                        <a href="videography.html">Videography</a>
+                        <a href="rentals.html">Gadget Rentals</a>
+                        <a href="specialized.html">Drone Piloting</a>
+                        <a href="consulting.html">Consultation</a>
+                         <a href="live.html">Livestreaming</a>
+                    </div>
+                </li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>FOCAL STUDIOS</h1>
+        <p style="letter-spacing: 3px; color: #ccc;">PREMIUM PRODUCTION • CREATIVE AGENCY</p>
+    </header>
+
+    <h2 id="portfolio" class="section-title" style="text-align: center; color: #D4AF37; margin-top: 50px; letter-spacing: 3px;">OUR WORK</h2>
+
+<div class="portfolio-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 20px; max-width: 1200px; margin: 0 auto;">
+    
+    <div class="portfolio-item" style="flex: 0 0 calc(50% - 10px); max-width: calc(50% - 10px); height: 250px; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
+        <img src="images/1.jpeg" style="width: 100%; height: 100%; object-fit: cover; transition: 0.4s;">
+    </div>
+
+    <div class="portfolio-item" style="flex: 0 0 calc(50% - 10px); max-width: calc(50% - 10px); height: 250px; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
+        <img src="images/2.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+    <div class="portfolio-item" style="flex: 0 0 calc(50% - 10px); max-width: calc(50% - 10px); height: 250px; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
+        <img src="images/3.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+    <div class="portfolio-item" style="flex: 0 0 calc(50% - 10px); max-width: calc(50% - 10px); height: 250px; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
+        <img src="images/4.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+    <div class="portfolio-item" style="flex: 0 0 calc(50% - 10px); max-width: calc(50% - 10px); height: 250px; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
+        <img src="images/5.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="portfolio-item" style="flex: 0 0 calc(50% - 10px); max-width: calc(50% - 10px); height: 250px; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
+        <img src="1000205182.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="portfolio-item" style="flex: 0 0 calc(50% - 10px); max-width: calc(50% - 10px); height: 250px; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
+        <img src="1000205183.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="portfolio-item" style="flex: 0 0 calc(50% - 10px); max-width: calc(50% - 10px); height: 250px; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
+        <img src="images/img3.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+</div>
+
+    <h2 class="section-title">The Creative Team</h2>
+<div class="team-container">
+    
+    <div class="team-container">
+  
+    <div class="team-card" style="width: 280px; text-align: left; background: #111; padding: 15px; border-radius: 10px; border: 1px solid #222;">
+        <img src="images/member.jpeg" alt="Adedayo Ola" style="width: 100%; height: 350px; object-fit: cover; border-radius: 5px; border-bottom: 3px solid #D4AF37;">
+        <h3 style="font-size: 1.2rem; margin: 15px 0 5px 0; color: white; letter-spacing: 1px;">ADEDAYO ADELUMOLA</h3>
+        <p style="color: #D4AF37; font-size: 0.8rem; text-transform: uppercase; margin: 0;">Creative Director</p>
+    </div>
+
+    <div class="team-card" style="width: 280px; text-align: left; background: #111; padding: 15px; border-radius: 10px; border: 1px solid #222;">
+        <img src="images/12.jpeg" alt="Idowu Isaac" style="width: 100%; height: 350px; object-fit: cover; border-radius: 5px; border-bottom: 3px solid #D4AF37;">
+        <h3 style="font-size: 1.2rem; margin: 15px 0 5px 0; color: white; letter-spacing: 1px;">ISAAC IDOWU</h3>
+        <p style="color: #D4AF37; font-size: 0.8rem; text-transform: uppercase; margin: 0;">Editor</p>
+    </div>
+
+    <div class="team-card" style="width: 280px; text-align: left; background: #111; padding: 15px; border-radius: 10px; border: 1px solid #222;">
+        <img src="images/13.jpeg" alt="Taiwo Mary Temidayo" style="width: 100%; height: 350px; object-fit: cover; border-radius: 5px; border-bottom: 3px solid #D4AF37;">
+        <h3 style="font-size: 1.2rem; margin: 15px 0 5px 0; color: white; letter-spacing: 1px;">OLUWANIFEMI ZOE’RA</h3>
+        <p style="color: #D4AF37; font-size: 0.8rem; text-transform: uppercase; margin: 0;">Motion Editor</p>
+    </div>
+
+    <div class="team-card" style="width: 280px; text-align: left; background: #111; padding: 15px; border-radius: 10px; border: 1px solid #222;">
+        <img src="images/11.jpeg" alt="OLUWANIFEMI ZOE’RA" style="width: 100%; height: 350px; object-fit: cover; border-radius: 5px; border-bottom: 3px solid #D4AF37;">
+        <h3 style="font-size: 1.2rem; margin: 15px 0 5px 0; color: white; letter-spacing: 1px;">MARY TAIWO</h3>
+        <p style="color: #D4AF37; font-size: 0.8rem; text-transform: uppercase; margin: 0;">Motion Editor</p>
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+    <a href="https://wa.me/8025052318?text=Hi%20Focal%20Studios!%20I'd%20like%20to%20chat%20about%20a%20project." class="whatsapp-float" target="_blank">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+   </a>
+
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid #222; color: #666; font-size: 0.8rem;">
+        <p>08025052318 | Lagos, Nigeria</p>
+        <p>&copy; 2026 Focal Studios</p>
+    </footer>
+
+</body>
+</html>

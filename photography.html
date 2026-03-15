@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photography | Focal Studios</title>
+    <style>
+        body {
+            margin: 0;
+            /* Make sure your image name matches exactly */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+                        url('1000205183.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 { color: #D4AF37; text-transform: uppercase; letter-spacing: 3px; }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .gold { color: #D4AF37; font-weight: bold; }
+        .back-link { margin-top: 30px; display: inline-block; color: #D4AF37; text-decoration: none; border: 1px solid #D4AF37; padding: 10px 20px; border-radius: 5px; }
+        .contact-section { max-width: 600px; margin: 0 auto 100px; padding: 0 20px; }
+        input, select, textarea {
+            width: 100%; padding: 12px; margin-bottom: 15px; background: #1a1a1a;
+            border: 1px solid #333; color: white; border-radius: 5px; box-sizing: border-box;
+        }
+        .submit-btn {
+            width: 100%; padding: 15px; background: var(--gold); color: black;
+            font-weight: bold; border: none; border-radius: 5px; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-panel">
+        <h1>Photography</h1>\
+         <div class="price-row"><span>Portrait Picture{Studio Church}</span><span class="gold">₦100,000</span></div>
+        <div class="price-row"><span>Standard Event</span><span class="gold">₦90,000</span></div>
+        <div class="price-row"><span>Wedding Coverage</span><span class="gold">₦150,000</span></div>
+        <div class="price-row"><span>Convocation Ceremony</span><span class="gold">₦150,000</span></div>
+        <div class="price-row"><span>Conference/Lecture</span><span class="gold">₦100,000</span></div>
+        <div class="price-row"><span>Other Event</span><span class="gold">negotiable</span></div>
+        <a href="index.html" class="back-link">← BACK TO HOME</a>
+    </div>
+
+    <div id="contact" style="max-width: 600px; margin: 60px auto; padding: 20px; background: rgba(10, 10, 10, 0.95); border-radius: 15px; border: 1px solid #D4AF37; font-family: sans-serif;">
+    <h2 style="color: #D4AF37; text-align: center; letter-spacing: 2px;">SECURE YOUR DATE</h2>
+    
+    <div style="margin-top: 20px;">
+        <input type="text" id="custName" placeholder="Your Full Name" style="width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #333; color: white; border-radius: 5px; box-sizing: border-box;">
+        
+        <select id="serviceType" style="width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #333; color: white; border-radius: 5px; box-sizing: border-box;">
+            <option value="Services">Services</option>
+            <option value="Photography">Photography</option>
+            <option value="Gadget Rentals">Gadget Rentals</option>
+            <option value="Drone Piloting">Drone Piloting</option>
+            <option value="Consultation">Consultation</option>
+            <option value="Editing">Editing</option>
+            <option value="Website Development">Website Development</option>
+        </select>
+        
+        <textarea id="custMessage" rows="4" placeholder="Event date and location..." style="width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #333; color: white; border-radius: 5px; box-sizing: border-box;"></textarea>
+        
+        <button type="button" onclick="
+            var name = document.getElementById('custName').value;
+            var service = document.getElementById('serviceType').value;
+            var msg = document.getElementById('custMessage').value;
+            var phone = '2348025052318';
+            var text = 'Hello Focal Studios!%0A%0A*Name:* ' + name + '%0A*Service:* ' + service + '%0A*Details:* ' + msg;
+            window.open('https://wa.me/' + phone + '?text=' + text, '_blank');
+        " style="width: 100%; padding: 15px; background: #25D366; color: white; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; text-transform: uppercase;">
+            Send to WhatsApp 
+        </button>
+    </div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rentals | Focal Studios</title>
+    <style>
+        body { background: #0a0a0a; color: white; font-family: sans-serif; padding: 20px; }
+        h1, h2 { color: #D4AF37; text-align: center; }
+        table { width: 100%; max-width: 800px; margin: 20px auto; border-collapse: collapse; background: #111; }
+        td, th { padding: 12px; border: 1px solid #333; }
+        th { background: #D4AF37; color: black; }
+        .combo { border: 2px dashed #D4AF37; padding: 20px; max-width: 800px; margin: 10px auto; background: #050505; }
+        .price { color: #D4AF37; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Equipment Rentals</h1>
+    <table>
+        <tr><th>Item</th><th>Price Per Day</th></tr>
+        <tr><td>Photo Camera</td><td>₦15,000</td></tr>
+        <tr><td>Video Camera(4k)</td><td>₦30,000</td></tr>
+        <tr><td>Video Camera(HD)/td><td>₦20,000</td></tr>
+        <tr><td>Video Mixer</td><td>₦100,000</td></tr>
+        <tr><td>Tripod</td><td>₦5,000</td></tr>
+        <tr><td>HDMI (15)</td><td>₦7,000</td></tr>
+        <tr><td>HDMI (20)</td><td>₦15,000</td></tr>
+        <tr><td>HDMI (50)</td><td>₦25,000</td></tr>
+        <tr><td>Sound Cable(15m)</td><td>₦5,000</td></tr>
+        <tr><td>Sound Cable(25m)</td><td>₦10,000</td></tr>
+        <tr><td>Sound Cable(50m)</td><td>₦15,000</td></tr>
+        <tr><td>Sound card</td><td>₦10,000</td></tr>
+        <tr><td>Capture Card</td><td>₦5,000</td></tr>
+    </table>
+
+    <h2>Combo Packages</h2>
+    <div class="combo">
+        <strong>Ultimate Combo:</strong> Video + Photo + HDMI + Sound Cable + Sound Card<br>
+        Price: <span class="price">₦80,000/day</span> (Free Delivery in Lagos)
+    </div>
+    <div class="combo">
+        <strong>Livestream Rentage:</strong> Video Camera + HDMI + Capture Card + Tripod<br>
+        Price: <span class="price">₦50,000/day</span>
+    </div>
+    <div class="combo">
+        <strong>Sound Audio Rentage:</strong>Sound card + Sound Cable <br>
+        Price: <span class="price">₦15,000/day</span>
+    </div>
+
+    <div style="text-align: center;"><a href="index.html" style="color: #D4AF37;">Back to Home</a></div>
+
+    <div id="contact" style="max-width: 600px; margin: 60px auto; padding: 20px; background: rgba(10, 10, 10, 0.95); border-radius: 15px; border: 1px solid #D4AF37; font-family: sans-serif;">
+    <h2 style="color: #D4AF37; text-align: center; letter-spacing: 2px;">SECURE YOUR DATE</h2>
+    
+    <div style="margin-top: 20px;">
+        <input type="text" id="custName" placeholder="Your Full Name" style="width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #333; color: white; border-radius: 5px; box-sizing: border-box;">
+        
+        <select id="serviceType" style="width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #333; color: white; border-radius: 5px; box-sizing: border-box;">
+            <option value="Services">Services</option>
+            <option value="Photography">Photography</option>
+            <option value="Videography">Videography</option>
+            <option value="Gadget Rentals">Gadget Rentals</option>
+            <option value="Drone Piloting">Drone Piloting</option>
+            <option value="Consultation">Consultation</option>
+            <option value="Livestreaming">Livestreaming</option>
+            <option value="Editing">Editing</option>
+            <option value="Website Development">Website Development</option>
+       </select>
+        
+        <textarea id="custMessage" rows="4" placeholder="Event date and location..." style="width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #333; color: white; border-radius: 5px; box-sizing: border-box;"></textarea>
+        
+        <button type="button" onclick="
+            var name = document.getElementById('custName').value;
+            var service = document.getElementById('serviceType').value;
+            var msg = document.getElementById('custMessage').value;
+            var phone = '2348025052318';
+            var text = 'Hello Focal Studios!%0A%0A*Name:* ' + name + '%0A*Service:* ' + service + '%0A*Details:* ' + msg;
+            window.open('https://wa.me/' + phone + '?text=' + text, '_blank');
+        " style="width: 100%; padding: 15px; background: #25D366; color: white; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; text-transform: uppercase;">
+            Send to WhatsApp 
+        </button>
+    </div>
+</div>
+</body>
+</html>

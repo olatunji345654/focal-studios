@@ -1,0 +1,33 @@
+:root {
+  --focal-gold: #D4AF37;
+  --focal-black: #0d0e0f;
+  --focal-gray: #1a1c1e;
+  --focal-text: #ffffff;
+}
+
+body {
+  background-color: var(--focal-black);
+  /* Subtle carbon texture */
+  background-image: radial-gradient(circle, #1a1c1e 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: var(--focal-text);
+  font-family: 'Inter', sans-serif;
+}
+
+/* The Glowing Gold Card Effect from your images */
+.service-card {
+  background: var(--focal-gray);
+  border: 1px solid #333;
+  transition: 0.3s;
+}
+
+.service-card:hover, .featured {
+  border: 1px solid var(--focal-gold);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.gold-text {
+  color: var(--focal-gold);
+  text-transform: uppercase;
+  font-weight: bold;
+}
